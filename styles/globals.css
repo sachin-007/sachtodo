@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
@@ -104,4 +104,626 @@ a {
   html {
     color-scheme: dark;
   }
+} */
+
+
+:root {
+  --primary-color: #6c5ce7;
+  --background-color: #f0f0f0;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.signup-container,
+.login-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+button {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.dashboard {
+  padding: 20px;
+}
+
+.board {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.column {
+  flex: 1;
+  margin: 0 10px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
+  min-height: 300px;
+}
+
+.task-card {
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.priority {
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 0.8em;
+  margin-right: 5px;
+}
+
+.priority.low { background-color: #27ae60; color: white; }
+.priority.medium { background-color: #f39c12; color: white; }
+.priority.urgent { background-color: #e74c3c; color: white; }
+
+.deadline {
+  font-size: 0.8em;
+  color: #7f8c8d;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+}
+
+.column {
+  background-color: #f4f5f7;
+  border-radius: 4px;
+  padding: 8px;
+  min-height: 200px;
+}
+
+.column.dragging-over {
+  background-color: #e6e6e6;
+}
+
+.task {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.task.dragging {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.dashboard {
+  padding: 20px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.create-task-button {
+  background-color: #6c5ce7;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.board {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.column {
+  flex: 1;
+  background-color: #f4f5f7;
+  border-radius: 8px;
+  padding: 10px;
+  min-height: 300px;
+}
+
+.add-new-button {
+  width: 100%;
+  background-color: #6c5ce7;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.task-modal {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease-in-out;
+}
+
+.task-modal.open {
+  right: 0;
+}
+
+.task-modal-content {
+  padding: 20px;
+}
+
+.task-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.task-modal button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.task-modal button[type="submit"] {
+  background-color: #6c5ce7;
+  color: white;
+}
+
+.task-modal button[type="button"] {
+  background-color: #ddd;
+}
+/* 
+:root {
+  --primary-color: #6c5ce7;
+  --background-color: #f0f0f0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.dashboard {
+  padding: 20px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.create-task-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.board {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.column {
+  flex: 1;
+  background-color: #f4f5f7;
+  border-radius: 8px;
+  padding: 10px;
+  min-height: 300px;
+}
+
+.column h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.task-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.task-card:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-new-button {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.task-modal {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.task-modal.open {
+  right: 0;
+}
+
+.task-modal-content {
+  padding: 20px;
+}
+
+.task-modal h2 {
+  margin-top: 0;
+}
+
+.task-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-modal input,
+.task-modal textarea,
+.task-modal select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.task-modal textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.task-modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.task-modal button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.task-modal button[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.task-modal button[type="button"] {
+  background-color: #ddd;
+}
+
+.priority {
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 0.8em;
+  margin-right: 5px;
+}
+
+.priority.low { background-color: #27ae60; color: white; }
+.priority.medium { background-color: #f39c12; color: white; }
+.priority.urgent { background-color: #e74c3c; color: white; }
+
+.deadline {
+  font-size: 0.8em;
+  color: #7f8c8d;
+} */
+
+
+/* this is for login and registration  */
+
+
+
+
+
+
+
+/* styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+:root {
+  --primary-color: #6c5ce7;
+  --background-color: #f0f0f0;
+  --border-color: #ddd;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --hover-shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.dashboard {
+  padding: 20px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.create-task-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.create-task-button:hover {
+  background-color: darken(var(--primary-color), 10%);
+  transform: scale(1.05);
+}
+
+.board {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.column {
+  flex: 1;
+  background-color: #f4f5f7;
+  border-radius: 10px;
+  padding: 15px;
+  min-height: 300px;
+  box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.column h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.task-card {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.task-card:hover {
+  box-shadow: 0 4px 8px var(--hover-shadow-color);
+  transform: translateY(-2px);
+}
+
+.add-new-button {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 12px;
+}
+
+.add-new-button:hover {
+  background-color: darken(var(--primary-color), 10%);
+  transform: scale(1.05);
+}
+
+.task-modal {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 420px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 5px var(--shadow-color);
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.task-modal.open {
+  right: 0;
+}
+
+.task-modal-content {
+  padding: 20px;
+}
+
+.task-modal h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.4em;
+  color: #333;
+}
+
+.task-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-modal input,
+.task-modal textarea,
+.task-modal select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+.task-modal input:focus,
+.task-modal textarea:focus,
+.task-modal select:focus {
+  border-color: var(--primary-color);
+}
+
+.task-modal textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.task-modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.task-modal button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.task-modal button[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.task-modal button[type="submit"]:hover {
+  background-color: darken(var(--primary-color), 10%);
+  transform: scale(1.05);
+}
+
+.task-modal button[type="button"] {
+  background-color: #ddd;
+}
+
+.task-modal button[type="button"]:hover {
+  background-color: #ccc;
+}
+
+.priority {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  margin-right: 6px;
+}
+
+.priority.low { background-color: #27ae60; color: white; }
+.priority.medium { background-color: #f39c12; color: white; }
+.priority.urgent { background-color: #e74c3c; color: white; }
+
+.deadline {
+  font-size: 0.9em;
+  color: #7f8c8d;
+}
+
+
+
+
+
+
+
+
