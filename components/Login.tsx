@@ -49,9 +49,9 @@ const Login: React.FC = () => {
       </form>
       <p className="mt-4 text-center">
         Don't have an account?{' '}
-        <Link href="/signup">
-          <a className="text-indigo-600 hover:underline">Create a new account</a>
-        </Link>
+        <Link href="/signup" className="text-blue-500 hover:underline">
+            Create a new account
+          </Link>
         .
       </p>
     </div>
